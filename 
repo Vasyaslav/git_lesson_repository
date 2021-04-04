@@ -1,0 +1,43 @@
+*   [33mcommit ed4f225[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+[31m|[m[32m\[m  Merge: 297816b ed9b623
+[31m|[m [32m|[m Author: Vasyaslav <rkbrktyl@gmail.com>
+[31m|[m [32m|[m Date:   Fri Apr 2 17:41:52 2021 +0300
+[31m|[m [32m|[m 
+[31m|[m [32m|[m     Объединение с python3branch
+[31m|[m [32m|[m 
+[31m|[m * [33mcommit ed9b623[m[33m ([m[1;32mpython3branch[m[33m)[m
+[31m|[m [32m|[m Author: Vasyaslav <rkbrktyl@gmail.com>
+[31m|[m [32m|[m Date:   Fri Apr 2 17:21:40 2021 +0300
+[31m|[m [32m|[m 
+[31m|[m [32m|[m     Python 3 version
+[31m|[m [32m|[m   
+* [32m|[m   [33mcommit 297816b[m
+[33m|[m[34m\[m [32m\[m  Merge: 5fc8c0f 50e69e3
+[33m|[m [34m|[m [32m|[m Author: Vasyaslav <rkbrktyl@gmail.com>
+[33m|[m [34m|[m [32m|[m Date:   Fri Apr 2 17:37:04 2021 +0300
+[33m|[m [34m|[m [32m|[m 
+[33m|[m [34m|[m [32m|[m     Merge Footer!
+[33m|[m [34m|[m [32m|[m 
+[33m|[m * [32m|[m [33mcommit 50e69e3[m[33m ([m[1;32mfooter[m[33m)[m
+[33m|[m [32m|[m[32m/[m  Author: Vasyaslav <rkbrktyl@gmail.com>
+[33m|[m [32m|[m   Date:   Fri Apr 2 17:29:30 2021 +0300
+[33m|[m [32m|[m   
+[33m|[m [32m|[m       footer!
+[33m|[m [32m|[m 
+* [32m|[m [33mcommit 5fc8c0f[m[33m ([m[1;32mauthor[m[33m)[m
+[32m|[m[32m/[m  Author: Vasyaslav <rkbrktyl@gmail.com>
+[32m|[m   Date:   Fri Apr 2 17:25:30 2021 +0300
+[32m|[m   
+[32m|[m       Add author
+[32m|[m 
+* [33mcommit 8534df1[m
+[34m|[m Author: Vasyaslav <rkbrktyl@gmail.com>
+[34m|[m Date:   Fri Apr 2 17:13:05 2021 +0300
+[34m|[m 
+[34m|[m     Добавили восклицательные знаки в program.py.
+[34m|[m 
+* [33mcommit f2cf555[m
+  Author: Vasyaslav <rkbrktyl@gmail.com>
+  Date:   Fri Apr 2 17:09:21 2021 +0300
+  
+      Мой первй коммит
