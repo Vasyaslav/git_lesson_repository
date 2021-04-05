@@ -58,10 +58,11 @@ def login():
         if user and user.check_password(form.password.data):
             login_user(user, remember=form.remember_me.data)
             return jsonify({'Успех': 'вы залогинились.'})
-        return jsonify({'Ошибка': 'Неправильный email или пароль.'})
+    return jsonify({'Ошибка': 'Неправильный email или пароль.'})
 
 
 def main():
+    db_session.global_init('db/storage.db')
     app.run()
 
 
