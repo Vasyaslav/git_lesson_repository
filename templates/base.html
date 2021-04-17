@@ -7,15 +7,6 @@
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous">
-    <style type="text/css">
-        #footer {
-    position: fixed;
-    left: 0; bottom: 0;
-    padding: 10px;
-    color: #fff;
-    width: 100%;
-   }
-    </style>
 </head>
 <body>
 <nav class="navbar navbar-light bg-light">
@@ -24,13 +15,14 @@
         {% else %}
             <p>
                 <a class="btn btn-success" href="/login">Войти</a>
+                <a class="btn btn-info" href="/register">Создать аккаунт</a>
             </p>
         {% endif %}
 </nav>
 <main role="main" class="container">
     {% block content %}{% endblock %}
 </main>
-<div id="basement">
+<div id="basement" style="margin-left: 400px;">
     &copy; rkbrktyl@gmail.com Лещинский Роман
 </div>
 </body>
