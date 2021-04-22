@@ -2,24 +2,25 @@
 
 {% block content %}
 <form action="" method="post">
+    {{ form.hidden_tag() }}
     {% for field in form if field.name != 'csrf_token' %}
         {% if field.name != 'submit' %}
             <div>
                 {{ field.label() }}
                 {{ field() }}
                 {% for error in field.errors %}
-                    <div class="error">{{ error }}</div>
+                    <div class="alert alert-danger" role="alert">{{ error }}</div>
                 {% endfor %}
             </div>
         {% else %}
             <div>
                 {{ field() }}
                 {% for error in field.errors %}
-                    <div class="error">{{ error }}</div>
+                    <div class="alert alert-danger" role="alert">{{ error }}</div>
                 {% endfor %}
             </div>
         {% endif %}
     {% endfor %}
-    {{message}}
+    <div>{{message}}</div>
 </form>
 {% endblock %}

@@ -1,5 +1,7 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 
-{% block content %}
-
+{% block inform %}
+<div>Имя: {{ current_user.name }}</div>
+<div>Почта: {{ current_user.email }}</div>
+<div>Дата регистрации: {{ current_user.modified_date }}</div>
 {% endblock %}

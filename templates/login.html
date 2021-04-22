@@ -2,18 +2,12 @@
 
 {% block content %}
 <form action="" method="post">
+    {{ form.hidden_tag() }}
     {% for field in form if field.name != 'csrf_token' %}
-        {% if field.name != 'remember_me' and field.name != 'submit' %}
+        {% if field.name != 'submit' %}
             <div>
                 {{ field.label() }}
                 {{ field() }}
-                {% for error in field.errors %}
-                    <div class="error">{{ error }}</div>
-                {% endfor %}
-            </div>
-        {% elif field.name == 'remember_me' %}
-            <div>
-                {{ field() }} {{ field.label() }}
                 {% for error in field.errors %}
                     <div class="error">{{ error }}</div>
                 {% endfor %}
@@ -27,5 +21,6 @@
             </div>
         {% endif %}
     {% endfor %}
+    {{ message }}
 </form>
 {% endblock %}
