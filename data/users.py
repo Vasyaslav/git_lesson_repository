@@ -16,9 +16,6 @@ class User(SqlAlchemyBase, UserMixin, SerializerMixin):
     hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     modified_date = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now)
 
-    def __repr__(self):
-        return f'<colonist> {self.id} {self.surname} {self.name}'
-
     def hashing_password(self, password):
         self.hashed_password = generate_password_hash(password)
 
