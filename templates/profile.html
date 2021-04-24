@@ -1,7 +1,15 @@
 {% extends "index.html" %}
 
 {% block inform %}
-<div>Имя: {{ current_user.name }}</div>
-<div>Почта: {{ current_user.email }}</div>
-<div>Дата регистрации: {{ current_user.modified_date }}</div>
+<h3>Имя: {{ current_user.name }}</h3>
+<h3>Почта: {{ current_user.email }}</h3>
+<h3>Дата регистрации: {{ current_user.modified_date }}</h3>
+<h2>Боты:</h2>
+{% for item in bots %}
+    <p>Id администратора сообщества: {{ item.admin_id }} </p>
+    <p>Id сообщества: {{ item.admin_id }} </p>
+    <p>Приветствие: {{ item.greetings }} </p>
+    <p>Дата создания: {{ item.created_date }} </p>
+    <a href="/bot_delete/{{ item.id }}" class="btn btn-danger">Удалить</a>
+{% endfor %}
 {% endblock %}
