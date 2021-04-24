@@ -2,8 +2,9 @@ from flask import Flask, render_template, redirect, request
 from flask_login import LoginManager, logout_user, login_user, login_required, current_user
 from data import db_session
 from data.users import User
+from data.vks import VkInfo
 from forms.user import RegisterForm, LoginForm
-
+from vk import VkTools
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'some really secret key'
@@ -21,7 +22,22 @@ def logout():
 @app.route('/profile')
 @login_required
 def profile():
-    return render_template('profile.html', title='Профиль')
+    db_sess = db_session.create_session()
+    bots = db_sess.query(VkInfo).filter(VkInfo.user_id == current_user.id)
+    for i in bots:
+        print(i.gr_id)
+    return render_template('profile.html', title='Профиль', bots=bots)
+
+
+@app.route('/bot_delete/<int:bot_id>')
+@login_required
+def deletor(bot_id):
+    db_sess = db_session.create_session()
+    bot = db_sess.query(VkInfo).get(bot_id)
+    if bot:
+        db_sess.delete(bot)
+        db_sess.commit()
+    return redirect('/profile')
 
 
 @login_manager.user_loader
