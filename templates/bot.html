@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+
+{% block inform %}
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <h1>Создание бота</h1>
+    <h2>Проследите, чтобы все поля имели верное значение</h2>
+    {% for item in form if item.name != 'csrf_token' %}
+        {% if item.name != 'submit' %}
+            <div>
+                {{ item.label() }}
+                {{ item() }}
+                {% for error in item.errors %}
+                    <div class="alert alert-danger" role="alert">{{ error }}</div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div>
+                {{ item() }}
+                {% for error in item.errors %}
+                    <div class="alert alert-danger" role="alert">{{ error }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endfor %}
+    {{ message }}
+</form>
+{% endblock %}

@@ -4,12 +4,15 @@
 <h3>Имя: {{ current_user.name }}</h3>
 <h3>Почта: {{ current_user.email }}</h3>
 <h3>Дата регистрации: {{ current_user.modified_date }}</h3>
+<a href="/new_form" class="btn btn-warning">Создать бота</a>
 <h2>Боты:</h2>
 {% for item in bots %}
+    <div class="border border-success">
     <p>Id администратора сообщества: {{ item.admin_id }} </p>
     <p>Id сообщества: {{ item.admin_id }} </p>
     <p>Приветствие: {{ item.greetings }} </p>
     <p>Дата создания: {{ item.created_date }} </p>
     <a href="/bot_delete/{{ item.id }}" class="btn btn-danger">Удалить</a>
+    </div>
 {% endfor %}
 {% endblock %}

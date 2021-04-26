@@ -19,14 +19,15 @@ class VkTools():
         for bot in all_bots:
             self.processes[str(bot.id)] = Process(target=self.for_bots, args=(bot,))
             self.processes[str(bot.id)].start()
-            schedule.every().day.at('17:26').do(self.sub_count, bot=bot)
+            schedule.every().day.at('20:33').do(self.sub_count, bot=bot)
         while True:
             schedule.run_pending()
 
     def terminator(self, some_id):
         for i in self.processes:
             if str(some_id) == i:
-                self.processes[i].terminate()
+                self.processes[i][0].terminate()
+                self.processes[i][1].terminate()
 
     def reload(self):
         for i in self.processes:
@@ -69,4 +70,3 @@ class VkTools():
 
 if __name__ == "__main__":
     VkTools()
-    print(14)
