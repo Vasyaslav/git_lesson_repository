@@ -40,7 +40,6 @@ class VkTools():
             if str(bot.id) in self.processes[-1]:
                 self.processes[0][str(bot.id)] = (Process(target=self.for_bots, args=(bot,)), bot.id)
                 self.processes[0][str(bot.id)][0].start()
-                print(bot.id)
                 schedule.every().day.at('12:00').do(self.sub_count, bot=bot)
         while True:
             schedule.run_pending()
@@ -103,7 +102,6 @@ def logout():
 def profile():
     db_sess = db_session.create_session()
     bots = db_sess.query(VkInfo).filter(VkInfo.user_id == current_user.id)
-    print(bot_api.processes)
     return render_template('profile.html', title='Профиль', bots=bots)
 
 
@@ -127,6 +125,11 @@ def load_user(user_id):
 @app.route('/')
 def start_page():
     return render_template('based.html', title='Начальная страница')
+
+
+@app.route('/guide')
+def guide():
+    return render_template('guide.html', title='Микро руководство')
 
 
 @app.route('/register', methods=['GET', 'POST'])
